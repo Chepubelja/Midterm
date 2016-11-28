@@ -1,7 +1,7 @@
 public class Ski_pass {
     protected Amount_of_days amount_of_days;
     protected Pass_spec pass_spec;
-    public Ski_pass(Pass_type pass_type, int amount_of_liftings,
+    public Ski_pass(Pass_type pass_type, int amount_of_liftings, Amount_of_days amount_of_days,
                     int unic_modintifier, boolean validity, Pass_spec pass_spec){
         this.pass_spec = new Pass_spec(unic_modintifier, pass_type, validity, amount_of_liftings);
         if (pass_spec.pass_type.toString().equals("Working_day")){
