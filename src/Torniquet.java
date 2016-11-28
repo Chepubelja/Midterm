@@ -1,21 +1,20 @@
-import java.lang.reflect.Array;
-
 public class Torniquet extends Ski_pass{
     public Torniquet(Pass_type pass_type, Amount_of_days amount_of_days, int amount_of_liftings, int unic_modintifier, boolean validity, Pass_spec pass_spec) {
-        super(pass_type, amount_of_days, amount_of_liftings, unic_modintifier, validity, pass_spec);
+        super(pass_type, amount_of_liftings, unic_modintifier, validity, pass_spec);
     }
     int counter = 0;
     private Ski_pass[] distinct;
 
     boolean check(Ski_pass ski_pass){
         boolean ifRight = false;
-        if (ski_pass.pass_spec.validity != true || Distinct_unic_modintifier(ski_pass) != true
+        if (!ski_pass.pass_spec.validity || !Distinct_unic_modintifier(ski_pass)
                 || ski_pass.pass_spec.amount_of_liftings == 0){
         }
         else
             ifRight = true;
+    return ifRight;
     }
-    boolean Distinct_unic_modintifier(Ski_pass ski_pass){
+    private boolean Distinct_unic_modintifier(Ski_pass ski_pass){
         boolean dist = false;
         for (Ski_pass ski_pass1: distinct){
             if (ski_pass != ski_pass1){
